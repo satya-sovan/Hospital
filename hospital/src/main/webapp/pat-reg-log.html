@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="bootstrap/css/extra.css">
+<link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div id="" class="col">
+				<div class="col-md-6 ">
+					<form action="PatRegister" method="POST" id="fileForm" role="form">
+						<fieldset>
+							<legend class="text-center">
+								Valid information is required to register. <span class="req"><small>
+										required *</small></span>
+							</legend>
+
+							<div class="form-group">
+								<label for="firstname"><span class="req">* </span> First
+									name: </label> <input class="form-control" type="text"
+									name="first-name" id="first-name" onkeyup="Validate(this)"
+									required />
+								<div id="errFirst"></div>
+							</div>
+
+							<div class="form-group">
+								<label for="lastname"><span class="req">* </span> Last
+									name: </label> <input class="form-control" type="text" name="last-name"
+									id="last-name" onkeyup="Validate(this)"
+									placeholder="hyphen or single quote OK" required />
+								<div id="errLast"></div>
+							</div>
+
+							<div class="form-group">
+								<label for="lastname"><span class="req">* </span> MOB
+									No.: </label> <input class="form-control" type="number" name="patPhNo"
+									id="last-name" placeholder="1234567890" required />
+								<div id="errLast"></div>
+							</div>
+							<div class="form-group">
+								<label for="symptoms"><span class="req">* </span>Symptoms:
+								</label> <input class="form-control" type="text" name="symptoms"
+									id="symptoms" onkeyup="Validate(this)"
+									placeholder="hyphen or single quote OK" required />
+								<div id="errLast"></div>
+							</div>
+							<div class="form-group">
+								<label for="symptoms"><span class="req">* </span>SelectDoctors:
+								</label> <select class="form-control" name="doc-id">
+									<option value="0" selected>Select Doctor
+									<option value="chi94">Dr. Chinu
+									<option value="ash96">Dr. Asish
+									<option value="sat95">Dr. Satya
+								</select>
+							</div>
+							<hr>
+
+							<input type="checkbox" required name="terms"
+								onchange="this.setCustomValidity(validity.valueMissing ? 'Please indicate that you accept the Terms and Conditions' : '');"
+								id="field_terms"> <label for="terms">I agree
+								with the <a href="terms.php"
+								title="You may read our terms and conditions by clicking on this link">terms
+									and conditions</a> for Registration.
+							</label><span class="req">* </span>
+
+
+							<div class="form-group">
+								<input class="btn btn-success" type="submit" name="submit_reg"
+									value="Register">
+							</div>
+							<h5>You will receive an email to complete the registration
+								and validation process.</h5>
+							<h5>Be sure to check your spam folders.</h5>
+
+
+						</fieldset>
+					</form>
+					<!-- ends register form -->
+
+					<script type="text/javascript">
+						document
+								.getElementById("field_terms")
+								.setCustomValidity(
+										"Please indicate that you accept the Terms and Conditions");
+					</script>
+				</div>
+
+			</div>
+			<div class="col-md-6">
+				<form method="POST" action="PatDetaile.jsp"
+					onsubmit="return validate(this)" name="frm">
+					<div class="maindiv">
+						<div align="center">
+							<font size="4" style="color: green"><b> Login to </b></font>
+						</div>
+
+
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="email">PAT-ID:</label>
+							<div class="col-sm-10 textbox">
+								<input type="name" class="form-control" id="email" name="email"
+									placeholder="Enter email">
+							</div>
+
+						</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="password">Phone No.:</label>
+								<div class="col-sm-10 textbox">
+									<input type="number" class="form-control" id="mob" name="patPhNo"
+										placeholder="Enter Mob No.">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<div class="checkbox">
+										<label><input type="checkbox"> Remember me</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<input type="hidden" value="no" name="vflag">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" class="btn btn-default bttn">LogIn</button>
+								</div>
+							</div>
+						</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

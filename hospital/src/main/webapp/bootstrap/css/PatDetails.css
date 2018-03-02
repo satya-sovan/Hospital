@@ -1,0 +1,31 @@
+.title{
+	font-size:60px;
+	font-weight:bold;
+	font-family:Verdana, Geneva, sans-serif;
+	color:white;
+	text-shadow:2px 1px 2px #000000;
+}
+.table-data{
+	font-size:20px;
+	font-weight:normal;
+	font-family:Arial, Helvetica, sans-serif;
+	
+}
+table{
+	margin:7px;
+}
+td{
+	padding:5px;
+}
+.pat-name{
+	font-size:20px;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.end{
+	color:black;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.pat-id{
+	font-size:25px;
+}

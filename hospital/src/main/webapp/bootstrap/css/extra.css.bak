@@ -1,0 +1,59 @@
+body {
+    padding-top:50px;
+	background-image:url("3.jpg");
+	background-repeat:no-repeat;
+	background-position:center;
+}
+fieldset {
+    border: thin solid #73AD21; 
+    border-radius: 5px;
+    padding:10px auto;
+	width:90%;
+    padding-left: 40px;
+    background: #fbfbfb;
+}
+legend {
+   color: #678;
+}
+.form-control {
+    width: 90%;
+}
+label small {
+    color: #678 !important;
+}
+span.req {
+    color:maroon;
+    font-size: 112%;
+}
+
+
+.register{
+	background:#ff6600;
+}
+
+.head{
+	height:100px;
+	
+}
+.head-text{
+	text-align:center;
+	font-weight:bold;
+	font-family:;
+	font-size:40px;
+	color:#fcfcfc;
+	text-shadow:5px 5px 5px #d6d6d6;
+	
+}
+
+.body-text {
+	text-align:center;
+	font-weight:bold;
+	font-family:Cambria;
+	font-size:30px;
+	color:#000000;
+	text-shadow:2px 2px 2px #aaaaaa;
+}
+.home{
+	width: 90%;
+    padding:10px auto;
+}

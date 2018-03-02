@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="bootstrap/css/extra.css">
+<link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+	<div class="row">
+		<div id="" class="col">
+			<div class="col-md-6">
+				<form method="POST" action="DocDetails.jsp"
+					onsubmit="return validate(this)" name="frm">
+					<div class="maindiv">
+						<div align="center">
+							<font size="4" style="color: green"><b>Doctor's Login to </b></font>
+						</div>
+
+
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="email">Doc-ID:</label>
+							<div class="col-sm-10 textbox">
+								<input type="name" class="form-control" name="doc-id"
+									placeholder="Enter doc-id">
+							</div>
+
+
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="password">Phone
+									No.:</label>
+								<div class="col-sm-10 textbox">
+									<input type="number" class="form-control" id="mob" name="mob"
+										placeholder="Enter Mob No.">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<div class="checkbox">
+										<label><input type="checkbox" style="width: 34px; height: 30px; "> Remember me</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<input type="hidden" value="no" name="vflag">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" class="btn btn-default bttn" style="width: 186px; height: 40px; ">Log
+										In</button>
+								</div>
+							</div>
+						</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
