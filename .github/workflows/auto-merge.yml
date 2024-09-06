@@ -22,11 +22,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install gh -y
-      
-      - name: Authenticate with GitHub CLI
-        run: |
-          gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
-
+          
       - name: Create Pull Request
         run: |
           # Get the current branch name
