@@ -1,5 +1,6 @@
 package com.hospital.util;
 
+//dummy pr
 public interface DBUtill {
 
 	public static String driver="oracle.jdbc.driver.OracleDriver";
