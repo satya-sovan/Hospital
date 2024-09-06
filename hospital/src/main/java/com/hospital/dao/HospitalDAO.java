@@ -12,7 +12,7 @@ import com.hospital.javabeen.HospitalBO;
 import com.hospital.util.DBUtill;
 
 /**
- *
+ *test hkhkljlkgdfgsdf
  */
 public class HospitalDAO {
 	

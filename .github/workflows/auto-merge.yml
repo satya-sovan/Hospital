@@ -1,30 +1,16 @@
-name: Auto Merge Feature Branches to Parent Branches
+name: Get Parent Branch from PR Event
 
 on:
-  push:
-    branches:
-      - 'feature/*'
+  pull_request:
+    types: [closed]  # Trigger on PR merge event
 
 jobs:
-  merge:
+  get_parent_branch:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Git
+      - name: Get Parent Branch from PR event
         run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-
-      - name: Merge into develop
-        run: |
-          git checkout develop
-          git merge ${{ github.ref }} --no-ff
-          git push origin develop
-
-      - name: Merge develop into master
-        run: |
-          git checkout master
-          git merge develop --no-ff
-          git push origin main
+          PARENT_BRANCH="${{ github.event.pull_request.base.ref }}"
+          echo "Parent branch: $PARENT_BRANCH"
+          echo "PARENT_BRANCH=$PARENT_BRANCH" >> $GITHUB_ENV
