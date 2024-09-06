@@ -19,9 +19,15 @@ jobs:
 
       - name: Merge into develop
         run: |
-          git checkout develop
+          git checkout Develop
           git merge ${{ github.ref }} --no-ff
-          git push origin develop
+          git push origin Develop
+
+      - name: Merge into release
+        run: |
+          git checkout Release
+          git merge ${{ github.ref }} --no-ff
+          git push origin Release
 
       - name: Merge develop into master
         run: |
