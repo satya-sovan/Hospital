@@ -1,35 +1,16 @@
-name: Get Parent Branch via Merge Base
+name: Get Parent Branch from PR Event
 
 on:
   pull_request:
-    types: [closed]  # Trigger when a PR is merged
+    types: [closed]  # Trigger on PR merge event
 
 jobs:
   get_parent_branch:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v3
-
-      - name: Fetch all branches
-        run: git fetch --all
-
-      - name: Get Parent Branch using Merge Base
+      - name: Get Parent Branch from PR event
         run: |
-          CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-          echo "Current branch: $CURRENT_BRANCH"
-          
-          # Find merge-base of current branch with develop and main
-          BASE_WITH_DEVELOP=$(git merge-base $CURRENT_BRANCH develop)
-          BASE_WITH_MAIN=$(git merge-base $CURRENT_BRANCH main)
-
-          # Compare to see which branch has the most recent common ancestor
-          if [[ $(git rev-list --count ${BASE_WITH_DEVELOP}..${CURRENT_BRANCH}) -lt $(git rev-list --count ${BASE_WITH_MAIN}..${CURRENT_BRANCH}) ]]; then
-            PARENT_BRANCH="develop"
-          else
-            PARENT_BRANCH="main"
-          fi
-
+          PARENT_BRANCH="${{ github.event.pull_request.base.ref }}"
           echo "Parent branch: $PARENT_BRANCH"
           echo "PARENT_BRANCH=$PARENT_BRANCH" >> $GITHUB_ENV
